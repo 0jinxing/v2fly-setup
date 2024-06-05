@@ -16,8 +16,6 @@ read email
 echo "Please enter your address name:"
 read address
 
-curl https://get.acme.sh | sh -s email=$email
-
 # /etc/v2fly/config.json
 bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
 systemctl enable v2fly
