@@ -7,8 +7,23 @@
       "settings": {
         "clients": [{ "id": "%UUID%" }]
       },
-      "streamSettings": { "network": "tcp" }
+      "streamSettings": { "network": "tcp" },
+      "sniffing": { "enabled": true, "destOverride": ["http", "tls"] }
     }
   ],
-  "outbounds": [{ "protocol": "freedom" }]
+  "outbounds": [
+    { "protocol": "freedom" },
+    { "protocol": "blackhole", "tag": "block" }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      { "type": "field", "outboundTag": "block", "protocol": ["bittorrent"] },
+      {
+        "ip": ["geoip:private", "geoip:cn"],
+        "outboundTag": "block",
+        "type": "field"
+      }
+    ]
+  }
 }
