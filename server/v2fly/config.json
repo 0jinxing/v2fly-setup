@@ -7,13 +7,7 @@
       "settings": {
         "clients": [{ "id": "%UUID%" }]
       },
-      "streamSettings": {
-        "network": "ds",
-        "dsSettings": {
-          "path": "@v2ray.sock",
-          "abstract": true
-        }
-      }
+      "streamSettings": { "network": "tcp" }
     }
   ],
   "outbounds": [{ "protocol": "freedom" }]

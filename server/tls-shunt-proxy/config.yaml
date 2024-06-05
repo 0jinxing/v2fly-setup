@@ -10,4 +10,4 @@ vhosts:
       args: /var/www/html
     default:
       handler: proxyPass
-      args: unix:@v2ray.sock
+      args: 127.0.0.1:40001
