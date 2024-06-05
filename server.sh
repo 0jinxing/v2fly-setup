@@ -28,8 +28,8 @@ systemctl enable tls-shunt-proxy
 mkdir -p /var/www/html
 
 # generate config.json
-cat ./server/config.json | sed "s/%UUID%/$uuid/g" > /etc/v2ray/config.json
-cat ./server/tls-shunt-proxy.yaml | sed "s/%ADDRESS%/$address/g" > /etc/tls-shunt-proxy/config.yaml
+cat ./server/v2fly/config.json | sed "s/%UUID%/$uuid/g" > /etc/v2ray/config.json
+cat ./server/tls-shunt-proxy/config.yaml | sed "s/%ADDRESS%/$address/g" > /etc/tls-shunt-proxy/config.yaml
 
 systemctl daemon-reload
 systemctl restart v2ray
