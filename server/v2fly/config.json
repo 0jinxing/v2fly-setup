@@ -1,0 +1,20 @@
+{
+  "inbounds": [
+    {
+      "protocol": "vmess",
+      "listen": "127.0.0.1",
+      "port": 40001,
+      "settings": {
+        "clients": [{ "id": "%UUID%" }]
+      },
+      "streamSettings": {
+        "network": "ds",
+        "dsSettings": {
+          "path": "@v2ray.sock",
+          "abstract": true
+        }
+      }
+    }
+  ],
+  "outbounds": [{ "protocol": "freedom" }]
+}
