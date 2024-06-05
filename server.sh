@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # root user
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
@@ -28,7 +30,7 @@ systemctl enable tls-shunt-proxy
 mkdir -p /var/www/html
 
 # generate config.json
-cat ./server/v2fly/config.json | sed "s/%UUID%/$uuid/g" > /etc/v2ray/config.json
+cat ./server/v2fly/config.json | sed "s/%UUID%/$uuid/g" > /usr/local/etc/v2ray/config.json
 cat ./server/tls-shunt-proxy/config.yaml | sed "s/%ADDRESS%/$address/g" > /etc/tls-shunt-proxy/config.yaml
 
 systemctl daemon-reload

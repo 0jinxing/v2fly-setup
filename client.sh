@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # prompt domain
 echo "Please enter your address name:"
 read address
