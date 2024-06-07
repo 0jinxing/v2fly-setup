@@ -30,11 +30,19 @@ read email
 echo "Please enter your address name:"
 read address
 
+# prompt username
+echo "Please enter your username:"
+read username
+
 # prompt password
 echo "Please enter your password:"
 read password
 
-cat ./Caddyfile | sed "s/%ADDRESS%/$address/g" | sed "s/%EMAIL%/$email/g"  | sed "s/%PASSWORD%/$password/g"  > /etc/caddy/Caddyfile
+cat ./Caddyfile | 
+    sed "s/%ADDRESS%/$address/g" | 
+    sed "s/%EMAIL%/$email/g"  | 
+    sed "s/%USERNAME%/$username/g" | 
+    sed "s/%PASSWORD%/$password/g"  > /etc/caddy/Caddyfile
 
 systemctl daemon-reload
 systemctl enable caddy

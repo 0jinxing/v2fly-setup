@@ -2,7 +2,7 @@
 tls %EMAIL%
 route {
   forward_proxy {
-    basic_auth %EMAIL% %PASSWORD%
+    basic_auth %USERNAME% %PASSWORD%
     hide_ip
     hide_via
     probe_resistance
