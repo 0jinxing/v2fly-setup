@@ -22,14 +22,17 @@ useradd --system \
 
 mv ./caddy.service /etc/systemd/system/caddy.service
 
-# prompt for email and password
-echo "Please enter your email and password for the proxy"
+# prompt email
+echo "Please enter your email address:"
+read email
 
-read -p "Email: " email
-read -sp "Password: " password
-
+# prompt address
 echo "Please enter your address name:"
 read address
+
+# prompt password
+echo "Please enter your password:"
+read password
 
 cat ./Caddyfile | sed "s/%ADDRESS%/$address/g" | sed "s/%EMAIL%/$email/g"  | sed "s/%PASSWORD%/$password/g"  > /etc/caddy/Caddyfile
 
