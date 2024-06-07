@@ -3,10 +3,10 @@ mkdir -p /usr/local/etc/caddy
 mkdir -p /var/www/html
 tar -xvf caddy-forwardproxy-naive.tar.xz -C /usr/local/etc/caddy
 
-# prompt for username and password
-echo "Please enter your username and password for the proxy"
+# prompt for email and password
+echo "Please enter your email and password for the proxy"
 
-read -p "Username: " username
+read -p "Email: " email
 read -sp "Password: " password
 
 echo "Please enter your address name:"
