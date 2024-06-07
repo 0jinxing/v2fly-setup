@@ -5,7 +5,7 @@ apt install -y curl xz-utils
 
 curl -LO https://github.com/klzgrad/forwardproxy/releases/download/v2.7.6-naive2/caddy-forwardproxy-naive.tar.xz
 tar -xf caddy-forwardproxy-naive.tar.xz
-mv caddy-forwardproxy-naive/caddy/ /etc/caddy/
+mv caddy-forwardproxy-naive/ /etc/caddy/
 rm -rf caddy-forwardproxy-naive caddy-forwardproxy-naive.tar.xz
 
 mv /etc/caddy/caddy /usr/bin/caddy
